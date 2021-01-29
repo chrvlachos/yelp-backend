@@ -8,6 +8,16 @@ const getCities = async (req, res, next) => {
         next(err)
     }
   }
+
+  const getCity = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const city = await City.findById(id);
+        res.json({ success: true, mes: 'show the city', data: city })
+    } catch(err) {
+        next(err)
+    }
+  }
 const createCity = async (req, res, next) => {
     try {
         const { Name } = req.body;
@@ -19,6 +29,7 @@ const createCity = async (req, res, next) => {
 }  
   module.exports = {
     getCities,
+    getCity,
     createCity
 }
 

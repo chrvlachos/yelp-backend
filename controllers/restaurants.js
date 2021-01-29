@@ -8,6 +8,15 @@ const getRestaurants = async (req, res, next) => {
         next(err)
     }
   }
+  const getRestaurant = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const restaurants = await Restaurant.findById(id);
+        res.json({ success: true, mes: 'show the restaurant', data: restaurants })
+    } catch(err) {
+        next(err)
+    }
+  }
 const createRestaurant = async (req, res, next) => {
     try {
         const { Name, Description, Picture, City_id } = req.body;
@@ -19,5 +28,6 @@ const createRestaurant = async (req, res, next) => {
 }  
   module.exports = {
     getRestaurants,
+    getRestaurant,
     createRestaurant
 }
