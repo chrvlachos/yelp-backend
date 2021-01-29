@@ -2,7 +2,7 @@ const Restaurant = require('../models/Restaurant');
 
 const getRestaurants = async (req, res, next) => {
     try {
-        const restaurants = await Restaurant.find();
+        const restaurants = await Restaurant.find().populate('City_id');
         res.json({ success: true, mes: 'show all restaurants', data: restaurants })
     } catch(err) {
         next(err)
