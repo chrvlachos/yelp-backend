@@ -28,4 +28,4 @@ server.use('/', restaurantTags);
 
 server.use(errorHandler);
 
-server.listen(PORT, () => console.log(`server connected on port ${PORT}`));
+server.listen(process.env.PORT || 5000, '0.0.0.0', () => console.log(`server connected on port ${PORT}`));
