@@ -1,7 +1,8 @@
 const express = require('express');
 const { 
   getCities,
-  createCity
+  createCity,
+  getCity
 } =require('../controllers/cities');
 
 const router = express.Router();
@@ -9,9 +10,12 @@ const router = express.Router();
 router
   .route('/cities')
   .get(getCities)
-router
-  .route('/cities/post')
   .post(createCity)
+
+  router
+  .route('/cities/:id')
+  .get(getCity)
+  
 
 
 module.exports = router;

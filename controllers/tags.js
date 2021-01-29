@@ -8,6 +8,15 @@ const getTags = async (req, res, next) => {
         next(err)
     }
   }
+  const getTag = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const tags = await Tag.find();
+        res.json({ success: true, mes: 'show the tags', data: tags })
+    } catch(err) {
+        next(err)
+    }
+  }
 const createTag = async (req, res, next) => {
     try {
         const { Name } = req.body;
@@ -19,5 +28,6 @@ const createTag = async (req, res, next) => {
 }  
   module.exports = {
     getTags,
+    getTag,
     createTag
 }
