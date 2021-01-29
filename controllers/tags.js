@@ -8,7 +8,16 @@ const getTags = async (req, res, next) => {
         next(err)
     }
   }
-
+const createTag = async (req, res, next) => {
+    try {
+        const { Name } = req.body;
+        const tags = await Tag.create({ Name });
+        res.json({ success: true, msg: 'entered new tag', data: tags })
+    } catch(err) {
+        next(err)
+    }
+}  
   module.exports = {
-    getTags
+    getTags,
+    createTag
 }

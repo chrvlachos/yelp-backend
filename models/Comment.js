@@ -8,6 +8,9 @@ const CommentSchema = new Schema({
     Date: {
         type: Date,
     },
+    Restaurant_id: {
+        type: mongoose.Schema.ObjectId, ref: 'Restaurant'
+    }
 });
 
 //collection named 

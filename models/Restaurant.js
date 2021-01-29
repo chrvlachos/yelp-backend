@@ -5,13 +5,18 @@ const RestaurantSchema = new Schema({
     Name: {
         type: String,
     },
-    City_id: {
-        type: mongoose.Schema.ObjectId,
+    Description: {
+        type: String,
     },
-    Comment_id: {
-        type: mongoose.Schema.ObjectId,
-    }
+    Picture: {
+        type: String,
+    },
+    City_id: {
+        type: mongoose.Schema.ObjectId, ref: 'City'
+    },
 });
+
 
 //collection named 
 module.exports = mongoose.model('Restaurant', RestaurantSchema);
+

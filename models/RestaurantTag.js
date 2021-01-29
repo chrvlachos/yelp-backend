@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RestaurantTagSchema = new Schema({
-    Id_restaurant: {
-        type: mongoose.Schema.ObjectId,
+    Restaurant_id: {
+        type: mongoose.Schema.ObjectId, ref: 'Restaurant'
     },
-    Id_tag: {
-        type: mongoose.Schema.ObjectId,
+    Tag_id: {
+        type: mongoose.Schema.ObjectId, ref: 'Tag'
     },
 });
 
 //collection named 
-module.exports = mongoose.model('Restaurant_Tag', RestaurantTagSchema);
+module.exports = mongoose.model('Restag', RestaurantTagSchema);

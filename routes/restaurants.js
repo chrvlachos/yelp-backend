@@ -1,6 +1,7 @@
 const express = require('express');
 const { 
-  getRestaurants
+  getRestaurants,
+  createRestaurant
 } =require('../controllers/restaurants');
 
 const router = express.Router();
@@ -8,6 +9,8 @@ const router = express.Router();
 router
   .route('/restaurants')
   .get(getRestaurants)
-
+router
+  .route('/restaurants/post')
+  .post(createRestaurant)
 
 module.exports = router;

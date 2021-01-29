@@ -6,6 +6,7 @@ const connectDB = require('./dbinit');
 const errorHandler = require('./middleware/error');
 
 const restaurants = require('./routes/restaurants');
+const restaurantTags = require('./routes/restaurantTags');
 const cities = require('./routes/cities');
 const comments = require('./routes/comments');
 const tags = require('./routes/tags');
@@ -23,7 +24,7 @@ server.use('/', restaurants);
 server.use('/', cities);
 server.use('/', comments);
 server.use('/', tags);
-//server.use('/', restaurantTags);
+server.use('/', restaurantTags);
 
 server.use(errorHandler);
 
