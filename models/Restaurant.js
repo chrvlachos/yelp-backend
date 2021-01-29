@@ -6,8 +6,11 @@ const RestaurantSchema = new Schema({
         type: String,
     },
     City_id: {
-        type: String,
+        type: mongoose.Schema.ObjectId,
     },
+    Comment_id: {
+        type: mongoose.Schema.ObjectId,
+    }
 });
 
 //collection named 

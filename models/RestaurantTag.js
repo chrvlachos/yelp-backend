@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const RestaurantTagSchema = new Schema({
     Id_restaurant: {
-        type: String,
+        type: mongoose.Schema.ObjectId,
     },
     Id_tag: {
-        type: String,
+        type: mongoose.Schema.ObjectId,
     },
 });
 
 //collection named 
-module.exports = mongoose.model('RestaurantTag', RestaurantTagSchema);
+module.exports = mongoose.model('Restaurant_Tag', RestaurantTagSchema);

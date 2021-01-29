@@ -9,3 +9,5 @@ const TagSchema = new Schema({
 
 //collection named 
 module.exports = mongoose.model('Tag', TagSchema);
+
+
