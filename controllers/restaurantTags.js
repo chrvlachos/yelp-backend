@@ -2,7 +2,7 @@ const Restag = require('../models/RestaurantTag');
 
 const getRestaurantTags = async (req, res, next) => {
     try {
-        const restags = await Restag.find();
+        const restags = await Restag.find().populate('Restaurant_id Tag_id');
         res.json({ success: true, mes: 'show all restaurant tags', data: restags })
     } catch(err) {
         next(err)
