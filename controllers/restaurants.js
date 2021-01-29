@@ -11,7 +11,7 @@ const getRestaurants = async (req, res, next) => {
 const getRestaurant = async (req, res, next) => {
     try {
         const {id} = req.params;
-        const restaurants = await Restaurant.findById(id);
+        const restaurants = await Restaurant.findById(id).populate('City_id tags');
         res.json({ success: true, mes: 'show the restaurant', data: restaurants })
     } catch(err) {
         next(err)
