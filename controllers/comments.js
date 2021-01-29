@@ -8,7 +8,16 @@ const getComments = async (req, res, next) => {
         next(err)
     }
   }
-
+const createComment = async (req, res, next) => {
+    try {
+        const { Text, Date } = req.body;
+        const comments = await Comment.create({ Text, Date });
+        res.json({ success: true, msg: 'entered new comment', data: comments })
+    } catch(err) {
+        next(err)
+    }
+}  
   module.exports = {
-    getComments
+    getComments,
+    createComment
   }
