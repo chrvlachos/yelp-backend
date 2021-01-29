@@ -14,6 +14,7 @@ const RestaurantSchema = new Schema({
     City_id: {
         type: mongoose.Schema.ObjectId, ref: 'City'
     },
+    tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }]
 });
 
 
